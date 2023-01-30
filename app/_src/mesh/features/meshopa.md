@@ -99,10 +99,11 @@ For more information, see [the {{site.mesh_product_name}} documentation about pr
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: MeshOPA
-mesh: default
 metadata:
   name: mopa-1
   namespace: kong-mesh-system
+  labels:
+    kuma.io/mesh: default # optional, defaults to `default` if unset
 spec:
   targetRef:
     kind: Mesh
@@ -218,10 +219,11 @@ Encoding the policy in a [Secret][secrets] provides some security for policies t
     ```yaml
     apiVersion: kuma.io/v1alpha1
     kind: MeshOpa
-    mesh: default
     metadata:
       name: opa-1
       namespace: kong-mesh-system
+      labels:
+        kuma.io/mesh: default # optional, defaults to `default` if unset
     spec:
       targetRef:
         kind: Mesh
@@ -371,10 +373,11 @@ spec:
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: MeshOPA
-mesh: default
 metadata:
   name: mopa-1
   namespace: kong-mesh-system
+  labels:
+    kuma.io/mesh: default # optional, defaults to `default` if unset
 spec:
   targetRef:
     kind: Mesh
@@ -435,10 +438,11 @@ The `agentConfig` field lets you define a custom configuration that points to an
 ```yaml
 apiVersion: kuma.io/v1alpha1
 kind: MeshOPA
-mesh: default
 metadata:
   name: mopa-1
   namespace: kong-mesh-system
+  labels:
+    kuma.io/mesh: default # optional, defaults to `default` if unset
 spec:
   targetRef:
     kind: Mesh
@@ -541,10 +545,11 @@ The following example shows how to deploy and test a sample MeshOPA policy on Ku
     echo "
     apiVersion: kuma.io/v1alpha1
     kind: MeshOPA
-    mesh: default
     metadata:
       namespace: kong-mesh-system
       name: mopa-1
+      labels:
+        kuma.io/mesh: default # optional, defaults to `default` if unset
     spec:
       targetRef:
         kind: Mesh
